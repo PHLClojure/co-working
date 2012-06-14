@@ -8,10 +8,8 @@
    [pallet.action.user :as user]
    [pallet.action.remote-file :as remote-file]
    [pallet.resource.service :as service]
-   [pallet.crate.php :as php]
    [pallet.crate.java :as java]
    [pallet.crate.git :as git]
-   [pallet.crate.mysql :as mysql]
    [pallet.resource.package :as package]
    [pallet.action.exec-script :as exec-script]
    [pallet.action.package :as package-action]
@@ -129,16 +127,21 @@
 (def with-base-server
   (core/server-spec
    :phases {:bootstrap (phase/phase-fn (automated-admin-user/automated-admin-user))
+            :settings (phase/phase-fn
+                       (java/java-settings {:vendor :openjdk})
+                       (java/java-settings {:vendor :oracle :version "7"
+                                       :components #{:jdk}
+                                       :instance-id :oracle-7}))
             :configure (phase/phase-fn
-                        ;(sane-package-manager)
-                         ;              (standard-prereqs)
-                                       (java/java :sun :bin :jdk)
+                        (sane-package-manager)
+                                       (standard-prereqs)
+;                                       (java/install-java :package :sun :bin :jdk)
                                        ;(clojure-development)
                                        )
             :java (phase/phase-fn
-                   ;; this does not work because sun-java-6 isn't in that archive anymore
-                   ; http://www.liberiangeek.net/2012/03/install-oracle-java-7-jdk-jre-in-ubuntu-11-10-oneiric-ocelot/
-                   (java/java :openjdk :bin :jdk))
+                   (java/install-java)
+;                   (java/install-java :instance-id :oracle-7)
+                   )
             :clojure (phase/phase-fn (clojure-development))
             }))
 
