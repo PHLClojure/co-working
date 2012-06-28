@@ -7,7 +7,23 @@ The server can be optionally configured for shared development in multiple langu
 
 ## Installation && Quickstart
 
-Install [leingingen][leingingen].  Currently leiningen 1 is required.
+Install https://github.com/technomancy/leiningen.  
+
+Currently leiningen 1 is required.
+
+Now you can configure your credentials.
+
+```bash
+lein pallet add-service aws aws-ec2 "your-aws-key" "your-aws-secret-key"
+```
+
+Note that this creates a ~/.pallet/services/aws.clj file with your credentials in it.
+
+The second argument above is the name of the jclouds provider, which is cloud specific. To find the value for other clouds, you can list the supported providers with:
+
+```bash
+lein pallet providers
+```
 
 ###Clone the library
 ```bash

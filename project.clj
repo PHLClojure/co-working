@@ -4,7 +4,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.3.0"]
-                 [org.cloudhoist/pallet "0.7.0"]
+                 [org.cloudhoist/pallet "0.7.1-SNAPSHOT"]
                  [org.cloudhoist/automated-admin-user "0.5.0"]
                  [org.cloudhoist/java "0.7.0-SNAPSHOT"]
                  [org.cloudhoist/git "0.5.0"]
