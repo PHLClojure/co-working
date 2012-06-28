@@ -10,29 +10,36 @@ The server can be optionally configured for shared development in multiple langu
 Install [leingingen][leingingen].  Currently leiningen 1 is required.
 
 ###Clone the library
-``` git clone git@github.com:PHLClojure/co-working.git
+```bash
+git clone git@github.com:PHLClojure/co-working.git
 ```
-```cd co-working
+```bash
+cd co-working
 ```
 
 ###Get dependencies with leiningen and enter the REPL
-``` lein deps
+```bash
+lein deps
 ```
-```lein repl
+```bash
+lein repl
 ```
 
 ###Prepare the REPL
-```(use 'co-working.core) (in-ns 'co-working.core)
+```clojure
+(use 'co-working.core) (in-ns 'co-working.core)
 ```
 
 ## Usage
 
 ###Launch a node
-```(def cap (core/converge {co-worker-cs 1} :compute aws-srvc))
+```clojure
+(def cap (core/converge {co-worker-cs 1} :compute aws-srvc))
 ```
 
 ###Destroy all running nodes
-```(def cap (core/converge {co-worker-cs 0} :compute aws-srvc))
+```clojure
+(def cap (core/converge {co-worker-cs 0} :compute aws-srvc))
 ```
 
 ## License
