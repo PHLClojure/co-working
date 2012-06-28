@@ -11,7 +11,20 @@ Install https://github.com/technomancy/leiningen.
 
 Currently leiningen 1 is required.
 
-Now you can configure your credentials.
+###Clone the library
+```bash
+git clone git@github.com:PHLClojure/co-working.git
+```
+```bash
+cd co-working
+```
+
+###Get dependencies with leiningen
+```bash
+lein deps
+```
+
+###Configure provider access credentials.
 
 ```bash
 lein pallet add-service aws aws-ec2 "your-aws-key" "your-aws-secret-key"
@@ -25,23 +38,11 @@ The second argument above is the name of the jclouds provider, which is cloud sp
 lein pallet providers
 ```
 
-###Clone the library
-```bash
-git clone git@github.com:PHLClojure/co-working.git
-```
-```bash
-cd co-working
-```
-
-###Get dependencies with leiningen and enter the REPL
-```bash
-lein deps
-```
+###Prepare the REPL
 ```bash
 lein repl
 ```
 
-###Prepare the REPL
 ```clojure
 (use 'co-working.core) (in-ns 'co-working.core)
 ```
