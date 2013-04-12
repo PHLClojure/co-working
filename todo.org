@@ -1,7 +1,6 @@
-** TODO use A+ user loop code to parse a YAML file, use clj-yaml
-** TODO use sun jdk 6 (or 7)
-** TODO tmux, gnu screen configs for admin user
+** DONE use sun jdk 6 (or 7)
+** DONE tmux, gnu screen configs for admin user
 ** TODO make a lein user group so users can run lein update on system lein
-** TODO tmux sharing
+** DONE tmux sharing
 ** TODO emacs, package and marmalade for users
 ** TODO user defaults setup for tmux, lein, emacs on creation of users in proper group
